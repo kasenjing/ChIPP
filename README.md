@@ -1,7 +1,7 @@
 # ChIP-seq
 pipeline for ChIP-seq
 
-# installation tools
+# dependencies
 install bwa
 
         conda install -c bioconda bwa
