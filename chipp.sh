@@ -43,6 +43,7 @@ echo "calculation is done."
 echo "start mapping"
 bwa aln ${ref_dir} ${fastq_dir} > ${name}.sai
 bwa samse ${ref_dir} ${name}.sai ${fastq_dir} > ${name}.sam
+# remove reads with quality smaller than -q specified INT
 samtools view -h -q ${map_quality} ${name}.sam -F 07404 -o ${name}.q30.uni.sam
 # calculate the number of seq do not pass quality control and -F 07404
 header_num=$(($(awk '/^@/, /^[^@]/; /^[^@]/ {exit}' ${name}.q30.uni.sam | wc -l)-1 | bc))
@@ -52,13 +53,19 @@ echo "map completed"
 # sort 
 samtools sort -O BAM ${name}.q30.uni.sam -o ${name}.q30.uni.sorted.bam 
 # mark duplicate reads
+
 java -jar $Picard MarkDuplicates I=${name}.q30.uni.sorted.bam O=${name}.q30.uni.marked_dup.bam M=marked_dup_metrics.txt
+
 # remove duplicated reads
+
 samtools view -F 07404 ${name}.q30.uni.marked_dup.bam -o ${name}.q30.uni.dedup.bam
+
 # calculate the num of duplicate
+
 align_num_dedup=$(samtools view -c ${name}.q30.uni.dedup.bam)
-#echo $align_num_dedup
+
 # call peak with macs3
+
 if [ ${peak_type} = "broad" ]
 then
 	macs3 callpeak -t ${name}.q30.uni.dedup.bam -g dm -n ${name} --broad
