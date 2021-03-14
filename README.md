@@ -28,9 +28,9 @@ pipeline for ChIP-seq
 	
 Arguments | Description
 ----------|-----------
-	-n | Name of the factor you are dueling with.
-	-f | Directory contain the .fastq file.
-	-r | Directory contain the bwa index file.
-	-q | Filter out alignments with MAPQ < [INT].
-	-p | Peak type.
+   -n | Name of the factor you are dueling with.
+   -f | Directory contain the .fastq file.
+   -r | Directory contain the bwa index file.
+   -q | Filter out alignments with MAPQ < [INT].
+   -p | Peak type.
 
