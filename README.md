@@ -1,7 +1,7 @@
 # ChIP-seq
 This pipeline is designed for ChIP-seq data analysis. 
 # Workflow
-[workflow](.
+[workflow](./workflow.md)
 
 # dependencies
 
