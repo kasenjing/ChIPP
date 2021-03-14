@@ -12,5 +12,5 @@ pipeline for ChIP-seq
 
         https://github.com/broadinstitute/picard
 
+#### add tools to path
 
-        conda install -c bioconda bwa
