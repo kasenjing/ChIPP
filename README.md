@@ -26,11 +26,11 @@ pipeline for ChIP-seq
 
 	./chipp.sh -n [string] -f [DIR] -r [DIR] -q [INT] -p [broad or narrow]
 	
-	Arguments | Description
-	----------|-----------
-	    -n | Name of the factor you are dueling with.
-	    -f | Directory contain the .fastq file.
-	    -r | Directory contain the bwa index file.
-	    -q | Filter out alignments with MAPQ < [INT].
-	    -p | Peak type.
+Arguments | Description
+----------|-----------
+-n | Name of the factor you are dueling with.
+-f | Directory contain the .fastq file.
+-r | Directory contain the bwa index file.
+-q | Filter out alignments with MAPQ < [INT].
+-p | Peak type.
 
