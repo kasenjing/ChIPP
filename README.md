@@ -20,4 +20,9 @@ pipeline for ChIP-seq
 	vi ~/.bashrc
 	export PATH=$PATH:/home/kasenjing/biotools/bwa
 	export Picard=/home/kasenjing/biotools/picard/build/libs/picard.jar
+	source ~/.bashrc
+
+# usage
+
+	./chipp.sh -n [string] -f [DIR] -r [DIR] -q [INT] -p [broad or narrow]
 
