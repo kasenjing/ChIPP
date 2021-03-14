@@ -8,5 +8,11 @@ https://github.com/lh3/bwa
 
 samtools -version 1.5
 
+https://github.com/samtools/samtools
+
+picard
+
+https://github.com/broadinstitute/picard
+
 
         conda install -c bioconda bwa
