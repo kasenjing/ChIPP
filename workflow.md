@@ -1,6 +1,8 @@
 # workflow
 
 This pipeline takes input files that are .fastq format(the file you usually get from sequencing company).
+* first step
+
 
 The first step of this pipeline is to map the sequences to reference genome using BWA.
 
@@ -9,6 +11,8 @@ Low quality means low reliablity. Also, one read can mapped to different positio
 for mismatches, deletions or insertions. For example, read A is exactly the same with spot B while has one mismatch compared to spot C.
 Mapping tool will retain the two alignments in the record file, so only one of the two record is needed for enrichment detection, obviously,
 spot B is the best one. The file produced is .sam file.
+* second step
+
 
 The next step is to filter out the alignments with low quality, which is specify by users. Lower quality score will retain more alignments 
 therefore more enrichment but cause low fidelity. Also, this step will retain one alignment for one read(spot B). When read A have several 
@@ -18,9 +22,13 @@ While preparing the sample for sequencing, multiple copies of one fragment may p
 target protein but are presented in the .sam file, they share be moved. Also, while sequencing a single amplification cluster, incorrectly 
 detected as multiple clusters by the optical sensor of the sequencing instrument. They are called duplicates, the latter one is called optical 
 duplicate.
+* third step
+
 
 The third step is to remove these duplicates. Alignments have exactly same start point and end point is regarded as duplicates. First, they are 
 marked by using picard. Then they are moved with samtools.
+* forth step
+
 
 The last step is to call peaks(enrichment) with MACS. This step produces file contain information about peak position and enrichment level.
 
