@@ -24,7 +24,7 @@ This pipeline is designed for ChIP-seq data analysis.
 
 
 	vi ~/.bashrc
-	export PATH=$PATH:/home/kasenjing/biotools/bwa
+	export PATH=$PATH:/home/kasenjing/biotools/	# directory contain the tools
 	export Picard=/home/kasenjing/biotools/picard/build/libs/picard.jar
 	source ~/.bashrc
 
