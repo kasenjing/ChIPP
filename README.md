@@ -15,6 +15,10 @@ This pipeline is designed for ChIP-seq data analysis.
 * picard
 
         https://github.com/broadinstitute/picard
+* macs
+
+	https://github.com/macs3-project/MACS
+	
 
 #### add tools to path
 
