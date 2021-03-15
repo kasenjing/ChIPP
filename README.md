@@ -8,16 +8,16 @@ This pipeline is designed for ChIP-seq data analysis.
 #### tools used in this pipeline
 * bwa -version 0.7.17
  
-        https://github.com/lh3/bwa
+	https://github.com/lh3/bwa
 * samtools -version 1.5
  
-        https://github.com/samtools/samtools
+	https://github.com/samtools/samtools
 * picard
 
-  	https://github.com/broadinstitute/picard
+ 	https://github.com/broadinstitute/picard
 * macs
 
-        https://github.com/macs3-project/MACS
+	https://github.com/macs3-project/MACS
 	
 
 #### add tools to path
