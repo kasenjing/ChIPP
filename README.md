@@ -14,10 +14,10 @@ This pipeline is designed for ChIP-seq data analysis.
         https://github.com/samtools/samtools
 * picard
 
-        https://github.com/broadinstitute/picard
+  	https://github.com/broadinstitute/picard
 * macs
 
-	https://github.com/macs3-project/MACS
+        https://github.com/macs3-project/MACS
 	
 
 #### add tools to path
