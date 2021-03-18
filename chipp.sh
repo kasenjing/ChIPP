@@ -40,18 +40,25 @@ fastq_seq_num=$(($(cat ${fastq_dir} | wc -l)/4 | bc))
 echo "calculation is done."
 
 #map reads to reference genome
+
 echo "start mapping"
 bwa aln ${ref_dir} ${fastq_dir} > ${name}.sai
 bwa samse ${ref_dir} ${name}.sai ${fastq_dir} > ${name}.sam
+
 # remove reads with quality smaller than -q specified INT
+
 samtools view -h -q ${map_quality} ${name}.sam -F 07404 -o ${name}.q30.uni.sam
+
 # calculate the number of seq do not pass quality control and -F 07404
 header_num=$(($(awk '/^@/, /^[^@]/; /^[^@]/ {exit}' ${name}.q30.uni.sam | wc -l)-1 | bc))
 total_num=$(($(cat ${name}.q30.uni.sam | wc -l)))
 quality_align_num=$(($total_num-$header_num | bc))
 echo "map completed"
+
 # sort 
+
 samtools sort -O BAM ${name}.q30.uni.sam -o ${name}.q30.uni.sorted.bam 
+
 # mark duplicate reads
 
 java -jar $Picard MarkDuplicates I=${name}.q30.uni.sorted.bam O=${name}.q30.uni.marked_dup.bam M=marked_dup_metrics.txt
