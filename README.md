@@ -1,5 +1,5 @@
 # ChIP-seq
-This pipeline is designed for ChIP-seq data analysis. 
+This pipeline is designed for ChIP-seq data analysis. This pipeline is designed for short single-end reads, provides r scripts of reads number passes through each step for statistics.
 # Workflow
 [workflow](./workflow.md)
 
