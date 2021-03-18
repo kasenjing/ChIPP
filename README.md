@@ -34,7 +34,7 @@ This pipeline is designed for ChIP-seq data analysis. This pipeline is designed 
 	
 Arguments | Description
 ----------|-----------
-   -n | Name of the factor you are dueling with.
+   -n | Name of the factor you are dealing with.
    -f | Directory contain the .fastq file.
    -r | Directory contain the bwa index file.
    -q | Filter out alignments with MAPQ < [INT].
