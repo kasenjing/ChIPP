@@ -84,6 +84,6 @@ echo -e "fastq_seq_num\t${fastq_seq_num}\nmapped_reads\t${mapped_reads}\nquality
 touch ${name}_stat.R
 echo -e "counts <- c(${align_num_dedup},  ${quality_align_num}, ${fastq_seq_num})" >> ${name}_stat.R
 echo -e "name <- c('deduplicated reads', 'quality_alignment','toral reads')" >> ${name}_stat.R
-echo -e "barplot(counts, name.arg = name, horiz = TRUE, las = 1, space = c(0.1, 0.1, 0.1, 0.1), width = c(0.15, 0.15, 0.15, 0.15), main = 'reads statistic', axes = FALSE)" >> ${name}_stat.R
+echo -e "barplot(counts, name.arg = name, horiz = TRUE, las = 1, space = c(0.1, 0.1, 0.1), width = c(0.15, 0.15, 0.15), main = 'reads statistic', axes = FALSE)" >> ${name}_stat.R
 echo "duration=$((SECONDS - start))seconds"
 
